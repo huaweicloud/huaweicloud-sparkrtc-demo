@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="hint_white">#99FFFFFF</color>
+    <color name="white_half_alpha">#88ffffff</color>
+    <color name="white_half_transparent">#00ffffff</color>
+    <color name="main_background">#f6f6f4</color>
+
+    <color name="background_blue_color">#0080DB</color>
+    <color name="blue_light">#0ECFFF</color>
+    <color name="blue_alpha">#9CD9FF</color>
+
+    <color name="dark_black">#CC262626</color>
+    <color name="black_half_transparent">#66000000</color>
+    <color name="black">#000000</color>
+    <color name="gray_deep_dark">#333333</color>
+    <color name="gray_light">#CCCCCC</color>
+    <color name="land_main_bg">#444444</color>
+</resources>

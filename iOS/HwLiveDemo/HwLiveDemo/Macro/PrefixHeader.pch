@@ -1,0 +1,93 @@
+/*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0  *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+//
+//  PrefixHeader.pch
+//  HwLiveDemo
+//
+//  Created by HW on 2020/7/13.
+//  Copyright © 2020 HW. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "UIColor+HWColor.h"
+#import "Masonry.h"
+#import "HWTool.h"
+#import "HWUserDefaultManager.h"
+
+/// UI
+#define SCREENSCALE [UIScreen mainScreen].bounds.size.width / 375.0
+#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
+#pragma mark - < iPhone手机适配 >
+//是否是ipad
+#define IS_iPad ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+// iPhone 4.7系列手机
+#define IS_iPhone ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) && !IS_iPad : NO)
+
+// iPhone XS 即后续升级系列手机
+#define IS_iPhone_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !IS_iPad : NO)
+
+// iPhone XS 即后续升级系列手机
+#define IS_iPhone_XS ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) && !IS_iPad : NO)
+
+// iPhone XS MAX系列手机
+#define IS_iPhone_XS_MAX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) && !IS_iPad : NO)
+
+// iPhone XR 系列手机
+#define IS_iPhone_XR (([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) && !IS_iPad : NO) || ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1624), [[UIScreen mainScreen] currentMode].size) && !IS_iPad : NO))
+
+// 刘海系列手机适配
+#define IS_iPhone_X_SERIES ((IS_iPhone_X == YES || IS_iPhone_XS == YES || IS_iPhone_XS_MAX == YES || IS_iPhone_XR == YES) ? YES : NO)
+
+
+/** 获取顶部安全区域高度 */
+#define kGetSafeAreaTopHeight \
+({float height = 0.0; \
+if (@available(iOS 11.0, *)) {\
+height =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;\
+}\
+(height);})
+
+/** 获取底部安全区域高度 */
+#define kGetSafeAreaBottomHeight \
+({float height = 0.0; \
+if (@available(iOS 11.0, *)) {\
+height =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;\
+}\
+(height);})
+
+
+//16进制颜色值
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define UIColorBaseBackGroud  [UIColor colorWithString:@"#f6f6f4"]
+#define UIColorText  [UIColor colorWithString:@"#0080bd"]
+
+#define HWLOGPATCH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"/HRTCEngine-log"]
+
+/// _APP_ID_ 和 _DOMAIN_ 从华为云获取
+#define _APP_ID_ @""
+#define _DOMAIN_ @""
+
+#endif /* PrefixHeader_pch */

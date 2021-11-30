@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_blue_color"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.huawei.rtcdemo.activities.LoginActivity">
+
+        <ImageView
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_250"
+                android:layout_marginTop="@dimen/dp_80"
+                android:background="@drawable/img_login_bg"
+                android:src="@drawable/img_login_new" />
+
+        <EditText
+                android:id="@+id/et_user_name"
+                android:layout_width="@dimen/dp_295"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginTop="@dimen/dp_100"
+                android:background="@drawable/btn_style_ui_user_shape"
+                android:gravity="center"
+                android:hint="@string/set_userName_hint"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hint_white"
+                android:textSize="@dimen/text_size_medium" />
+
+
+        <Button
+                android:id="@+id/login_button"
+                android:layout_width="@dimen/dp_295"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginTop="@dimen/dp_40"
+                android:background="@drawable/btn_style_ui_login_shape"
+                android:text="@string/login_text"
+                android:textColor="@color/background_blue_color"
+                android:textSize="@dimen/text_size_large"
+                android:onClick="onLoginClicked"/>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:paddingBottom="@dimen/dp_30">
+
+    <RelativeLayout
+        android:id="@+id/room_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42">
+
+        <TextView
+            android:id="@+id/tv_room_list_back"
+            android:layout_width="@dimen/dp_27"
+            android:layout_height="@dimen/dp_27"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/dp_18"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:background="@drawable/btn_back_blue_normal" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:text="@string/live_room_member_list"
+            android:textColor="@color/background_blue_color"
+            android:textSize="@dimen/text_size_large" />
+
+        <TextView
+            android:id="@+id/tv_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_title"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_toEndOf="@+id/tv_title"
+            android:textColor="@color/background_blue_color"
+            android:textSize="@dimen/text_size_normal" />
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/room_title_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_member"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

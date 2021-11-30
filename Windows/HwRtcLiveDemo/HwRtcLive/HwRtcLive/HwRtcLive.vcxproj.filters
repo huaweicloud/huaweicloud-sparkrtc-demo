@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{eb7ec872-7718-46a7-936c-5a5f1e77b3d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{28945a29-5773-468b-9de8-bad641139577}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Dialog">
+      <UniqueIdentifier>{a8a76a37-3584-4a5d-970b-b37fd66b80be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View\Wnd">
+      <UniqueIdentifier>{00b59639-22da-4b23-ad55-924b87e78a7c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HwRtcLive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HwRtcLiveDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\EnterRoomDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\VideoDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="HwRtcMsgDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HwRtcEngineMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HwEngineEventHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\StringUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\UserListDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\DeviceDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\DeviceDlg.h">
+      <Filter>UI\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\NoticeDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\ToastDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\HwCatchDump.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Wnd\HWVideoWnd.h">
+      <Filter>View\Wnd</Filter>
+    </ClInclude>
+    <ClInclude Include="Controll\SysTray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\RDLog.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\RDLogManager.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\RDLogSingleton.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\MediaInfoDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="HwVideoRect.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\TypeEnterDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\DeviceDlgNew.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog\CreateDlg.h">
+      <Filter>View\Dialog</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HwRtcLive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HwRtcLiveDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\EnterRoomDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\VideoDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="HwRtcEngineMgr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HwEngineEventHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\StringUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\UserListDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\DeviceDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\NoticeDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\ToastDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\HwCatchDump.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Wnd\HWVideoWnd.cpp">
+      <Filter>View\Wnd</Filter>
+    </ClCompile>
+    <ClCompile Include="Controll\SysTray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\RDLog.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\RDLogManager.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\MediaInfoDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\TypeEnterDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\DeviceDlgNew.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog\CreateDlg.cpp">
+      <Filter>View\Dialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HwRtcLive.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HwRtcLive.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\HwRtcLive.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\close.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\user.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\video_off.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\video_on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\meeting.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\tool.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\chat.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\back_view.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_background.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_camera_off.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_camera_on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_close.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_hangup_video.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_max.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_microphone_off.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_microphone_on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_min.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_origin_size.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_scrap_video.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_setting_video.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_speaker_off.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_speaker_on.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\btn_user_list.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\dlg_main_background.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

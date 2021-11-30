@@ -1,0 +1,68 @@
+<!-- /*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */ -->
+<div *ngIf="roomSetService.joinRoomStatus===false;else callRoom" class="container-root">
+    <div class="container-box">
+        <form dForm ngForm [layout]="'vertical'" [dValidateRules]="{ message: '表单校验不通过，请检查' }">
+            <div style="text-align: center; margin: 30px 0 20px 0;"><img src="./assets/img/rtc_logo_red.png"
+                    style="width: 201px;height: 201px;"><img></div>
+            <div [ngModelGroup]="'textGroup'">
+                <d-form-item>
+                    <d-form-label>房间号</d-form-label>
+                    <d-form-control>
+                        <input autocomplete="off" dTextInput name="roomId" placeholder="请输入1到26位的大小写字母或数字"
+                            [(ngModel)]="roomSetService.roomId"
+                            [dValidateRules]="[{ required: true, message: '请输入1到26位的大小写字母、数字或 - 的房间号' }]" />
+                    </d-form-control>
+                </d-form-item>
+                <d-form-item>
+                    <d-form-label>用户名</d-form-label>
+                    <d-form-control>
+                        <input id="userId" dTextInput autocomplete="off" name="userId"
+                            placeholder="请输入1到26位的大小写字母、数字或 -" [(ngModel)]="roomSetService.userId"
+                            [dValidateRules]="[{ required: true, message: '请输入1到26位的大小写字母、数字或 - 的用户名' }]" />
+                    </d-form-control>
+                </d-form-item>
+                <d-form-item>
+                    <d-checkbox color="#de504e" name="audioUnMuted" [label]="'打开麦克风'"
+                        [(ngModel)]="roomSetService.audioUnMuted"> </d-checkbox>
+                </d-form-item>
+                <d-form-item>
+                    <d-checkbox color="#de504e" name="videoUnMuted" [label]="'打开摄像头'"
+                        [(ngModel)]="roomSetService.videoUnMuted"> </d-checkbox>
+                </d-form-item>
+                <d-form-item>
+                    <d-radio-group name="joinRole" [values]="joinRoles" [cssStyle]="'row'"
+                        [(ngModel)]="roomSetService.joinRole"> </d-radio-group>
+                </d-form-item>
+            </div>
+            <d-form-item>
+                <div class="btn-group">
+                    <d-button circled="true" icon="icon-add-member" width="130px" style="margin-right: 40px;"
+                        bsStyle="danger" dFormSubmit (btnClick)="joinRoom()">加入</d-button>
+                    <d-button icon="icon-setting" width="130px" bsStyle="common" (btnClick)="joinSet()">设置</d-button>
+                </div>
+            </d-form-item>
+        </form>
+    </div>
+</div>
+<ng-template #callRoom>
+    <app-call-room (childOuter)="getChildData($event)"></app-call-room>
+</ng-template>

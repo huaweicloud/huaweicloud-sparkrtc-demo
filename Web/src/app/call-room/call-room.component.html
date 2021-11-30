@@ -1,0 +1,169 @@
+<!-- /*
+ * Copyright (c) Huawei Technologies Co., Ltd. 2021-2021. All rights reserved.
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */ -->
+<d-layout class="basic-usage">
+  <d-header>
+    <div class="logo">
+      <img src="./assets/img/icon_huawei_logo.png" />
+    </div>
+    <div class="set-div">
+      <a href="#" (click)="joinSet()"><img src="./assets/img/icon_setting.png" />设置</a>
+    </div>
+  </d-header>
+  <d-layout>
+    <d-splitter style="height: 500px" class="splitter-border" [orientation]="'vertical'"
+      [disabledBarSize]="disabledBarSize">
+      <d-splitter-pane size="180px" [collapsed]="collapsed" [collapsible]="true" [resizable]="false"
+        style="margin-bottom: 10px;">
+        <div class="pane-content">
+
+          <div class="container" backdrop="true">
+            <!-- 本地主流 小屏窗口-->
+            <div class="main-screen">
+              <div id="c0-main" title="单击大屏展示" (click)="handleSwitchView(localStreamWapper)"
+                class="little-screen-display"
+                [style.display]="localStreamWapper && localStreamWapper.showCurMain ? 'none' : 'block' "></div>
+              <div id="{{ 'c0-main_screen' }}" class="little-screen-grey"
+                [style.display]="localStreamWapper && localStreamWapper.showCurMain ? 'block' : 'none' ">
+                <span>已在大屏展示</span>
+              </div>
+              <div class="screen-title">
+                <div class="user-info">{{ roomSetService.userId }}</div>
+                <!-- 摄像头及话筒 -->
+                <div class="user-pic" style="float: right" id="user-pic"
+                  [style.display]="curMainDisplayStream && curMainDisplayStream.userId === 'local' && curMainDisplayStream.type === 'main' ? 'none' : 'block'">
+                  <div class="muteAudio">
+                    <a (click)="muteAudio(localStreamWapper)"><img [src]="
+                        localStreamWapper && !localStreamWapper.muteAudio
+                            ? './assets/img/icon_unmute_audio_output.png'
+                            : './assets/img/icon_mute_audio_output.png'" /></a>
+                  </div>
+                  <div class="muteVideo">
+                    <a (click)="muteVideo(localStreamWapper)"><img [src]="
+                        localStreamWapper && !localStreamWapper.muteVideo
+                            ? './assets/img/icon_unmute_video.png'
+                            : './assets/img/icon_mute_video.png'" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 本地辅流窗口 小屏窗口-->
+            <div class="main-screen" [style.display]=" localAuxStreamWapper ? 'block' : 'none' ">
+              <div id="c0-main-aux" title="单击大屏展示" (click)="handleSwitchView(localAuxStreamWapper)"
+                class="little-screen-display"
+                [style.display]="!roomSetService.showAux || (localAuxStreamWapper && localAuxStreamWapper.showCurMain) ? 'none' : 'block' ">
+              </div>
+              <div id="{{ 'c0-main-aux_screen' }}" class="little-screen-grey"
+                [style.display]=" localAuxStreamWapper && localAuxStreamWapper.showCurMain ? 'block' : 'none' ">
+                <span>已在大屏展示</span>
+              </div>
+              <div class="screen-title" [style.display]="roomSetService.showAux ? 'block' : 'none'">
+                <div class="user-info">您的屏幕共享</div>
+              </div>
+            </div>
+            <!-- 其他远端流 小屏小屏窗口-->
+            <div *ngFor="let remoteStream of roomSetService.remoteStreams;" class="remote-screen">
+              <div id="{{ 'c0-remote' + remoteStream.userId + remoteStream.type }}" title="单击大屏展示" (click)="
+                  handleSwitchView(remoteStream)
+                " class="little-screen-display"
+                [style.display]="remoteStream && remoteStream.showCurMain ? 'none' : 'block' "></div>
+              <div id="{{
+                  'c0-remote' +
+                    remoteStream.userId +
+                    remoteStream.type +
+                    '_screen'
+                }}" class="little-screen-grey" style="display: none"
+                [style.display]="remoteStream && remoteStream.showCurMain ? 'block' : 'none' ">
+                <span>已在大屏展示</span>
+              </div>
+              <div class="screen-title">
+                <div class="user-info">
+                  {{ getUserByStreamId(remoteStream) }}
+                </div>
+                <!-- 摄像头及话筒 -->
+                <div class="user-pic" style="float: right"
+                  [style.display]="curMainDisplayStream && curMainDisplayStream.userId === remoteStream.userId && curMainDisplayStream.type === remoteStream.type ? 'none' : 'block'">
+                  <div class="muteAudio">
+                    <a (click)="muteAudio(remoteStream)"><img [style.visibility]="
+                          remoteStream.stream.haveAudio_ ? 'hidden':'visible' 
+                        " [src]="
+                          remoteStream.muteAudio
+                            ? './assets/img/icon_mute_audio_output.png'
+                            : './assets/img/icon_unmute_audio_output.png'" /></a>
+                  </div>
+                  <div class="muteVideo">
+                    <a (click)="muteVideo(remoteStream)"><img [style.visibility]="
+                          remoteStream.stream.haveVideo_ ? 'hidden':'visible' 
+                        " [src]="
+                          remoteStream.muteVideo
+                            ? './assets/img/icon_mute_video.png'
+                            : './assets/img/icon_unmute_video.png'" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </d-splitter-pane>
+      <d-splitter-pane>
+        <div class="pane-content">
+          <!-- 房间号 -->
+          <div class="room-title-div">
+            <div class="room-title">
+              <img src="./assets/img/icon_room.png" />
+              <span class="rooId">房间号：{{ roomSetService.roomId }}</span>
+            </div>
+          </div>
+          <!--大屏显示 窗口-->
+          <div id="main-display" class="main-display"></div>
+          <div class="footer">
+            <div class="btn-group-div">
+              <div>
+                <a (click)="muteAudio(curMainDisplayStream)"><img [src]="
+                    curMainDisplayStream && !curMainDisplayStream.muteAudio
+                        ? './assets/img/icon_microphone.png'
+                        : './assets/img/icon_mute_audio_input.png'" /></a>
+              </div>
+              <div>
+                <a (click)="muteVideo(curMainDisplayStream)"><img [src]="
+                    curMainDisplayStream && !curMainDisplayStream.muteVideo
+                        ? './assets/img/icon_unmute_video_big.png'
+                        : './assets/img/icon_mute_video_big.png'" /></a>
+              </div>
+              <!-- 共享按钮 -->
+              <div>
+                <a (click)="toggleSubStream()"><img [src]="
+                      roomSetService.showAux
+                        ? './assets/img/icon_pub_local_aux.png'
+                        : './assets/img/icon_unpub_local_aux.png'" /></a>
+              </div>
+              <div>
+                <img class="split-img" src="./assets/img/icon_line.png" />
+              </div>
+              <div>
+                <a (click)="leaveRoom()"><img src="./assets/img/icon_leave_room.png" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </d-splitter-pane>
+    </d-splitter>
+  </d-layout>
+</d-layout>

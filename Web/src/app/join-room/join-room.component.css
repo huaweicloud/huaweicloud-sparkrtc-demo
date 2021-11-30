@@ -1,0 +1,24 @@
+
+.container-root{
+    /* height: 100vh; */
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    
+    padding-top: 4.95rem;
+    padding-bottom: 5.95rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+}
+.container-box{
+    align-items: center;
+    justify-content: center;
+}
+form {
+    width: 300px;
+  }
+

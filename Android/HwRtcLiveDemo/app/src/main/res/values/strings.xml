@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name" translatable="false">华为实时音视频</string>
+
+    <!-- MainActivity -->
+    <string name="rtc_room_list" translatable="false">视频互动</string>
+    <string name="create_class_room" translatable="false">创建房间</string>
+    <string name="join_class_room" translatable="false">加入房间</string>
+    <string name="join_room_cancel" translatable="false">取消</string>
+    <string name="enter_roomId_hint" translatable="false">Enter the roomId</string>
+
+    <!-- SettingsActivity -->
+    <string name="setting_title">设    置</string>
+    <string name="setting_down_stream_select_title" translatable="false">下行分辨率</string>
+    <string name="setting_nickname_title" translatable="false">我的昵称</string>
+    <string name="text_90p" translatable="false">90p</string>
+    <string name="text_180p" translatable="false">180p</string>
+    <string name="text_360p" translatable="false">360p</string>
+    <string name="text_720p" translatable="false">720p</string>
+
+
+    <!-- LoginActivity -->
+    <string name="set_userName_hint" translatable="false">设置用户名</string>
+    <string name="login_text" translatable="false">登       录</string>
+
+    <!-- LiveActivity -->
+    <string name="live_room_member_list">在线成员</string>
+
+</resources>

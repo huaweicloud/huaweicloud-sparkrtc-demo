@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:gravity="center|start">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/dp_16"
+        android:src="@drawable/ic_member" />
+
+
+    <TextView
+        android:id="@+id/item_user_id"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_toRightOf="@id/iv_icon"
+        android:gravity="center_vertical"
+        android:text="@string/live_room_member_list"
+        android:textColor="@color/dark_black"
+        android:textSize="@dimen/text_size_normal" />
+
+    <ImageView
+        android:id="@+id/img_video"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:src="@drawable/btn_video_on"
+        android:tag="select" />
+
+</RelativeLayout>

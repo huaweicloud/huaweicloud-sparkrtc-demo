@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <com.huawei.rtcdemo.ui.NewTitleBar
+        android:id="@+id/setting_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:center_color="@color/background_blue_color"
+        app:center_text="@string/setting_title"
+        app:left_icon="@drawable/btn_back_blue_normal"
+        app:title_bg_color="@color/main_background"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/setting_title_layout"
+        android:layout_centerHorizontal="true">
+
+
+        <ImageView
+            android:id="@+id/setting_nickname_image"
+            android:layout_width="@dimen/dp_21"
+            android:layout_height="@dimen/dp_28"
+            android:layout_marginStart="@dimen/dp_7"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_20"
+            app:srcCompat="@drawable/ic_setting_nickname" />
+
+        <TextView
+            android:id="@+id/setting_nickname_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginEnd="@dimen/dp_7"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_toEndOf="@+id/setting_nickname_image"
+            android:text="@string/setting_nickname_title"
+            android:textColor="@color/gray_deep_dark"
+            android:textSize="@dimen/text_size_normal" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/setting_nickname"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="@dimen/dp_30"
+            android:layout_below="@id/setting_nickname_title"
+            android:layout_toEndOf="@+id/setting_nickname_image"
+            android:background="@drawable/btn_style_ui_live_shape"
+            android:gravity="center"
+            android:lines="1"
+            android:singleLine="true"
+            android:textColor="@color/dark_black"
+            android:textColorHint="@color/dark_black"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_size_large" />
+
+
+        <ImageView
+                android:id="@+id/setting_enc_down_image"
+                android:layout_width="@dimen/dp_21"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_below="@+id/setting_nickname"
+                app:srcCompat="@drawable/ic_setting_enc_param" />
+
+        <TextView
+                android:id="@+id/setting_stream_select_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_7"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_toEndOf="@+id/setting_enc_down_image"
+                android:layout_below="@+id/setting_nickname"
+                android:text="@string/setting_down_stream_select_title"
+                android:textColor="@color/gray_deep_dark"
+                android:textSize="@dimen/text_size_normal" />
+
+        <RadioGroup
+                android:id="@+id/rg_pixels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/setting_stream_select_title"
+                android:layout_toEndOf="@+id/setting_enc_down_image"
+                android:orientation="vertical">
+
+            <RadioButton
+                    android:id="@+id/setting_radio_90"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:buttonTint="@color/blue_light"
+                    android:text="@string/text_90p" />
+
+            <RadioButton
+                    android:id="@+id/setting_radio_180"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:buttonTint="@color/blue_light"
+                    android:text="@string/text_180p" />
+
+            <RadioButton
+                    android:id="@+id/setting_radio_360"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:buttonTint="@color/blue_light"
+                    android:text="@string/text_360p" />
+
+            <RadioButton
+                    android:id="@+id/setting_radio_720"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:buttonTint="@color/blue_light"
+                    android:text="@string/text_720p" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/hw_rtc_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColor="@color/background_blue_color"
+            android:textSize="@dimen/text_size_medium" />
+
+        <TextView
+            android:id="@+id/hw_rtc_release_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:singleLine="true"
+            android:textAlignment="gravity"
+            android:textColor="@color/blue_alpha"
+            android:textSize="@dimen/text_size_small" />
+
+    </RelativeLayout>
+</RelativeLayout>

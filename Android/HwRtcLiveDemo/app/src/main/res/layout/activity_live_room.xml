@@ -1,0 +1,247 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/live_room_appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:id="@+id/live_room_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/main_background">
+
+            <RelativeLayout
+                android:id="@+id/live_name_space_layout"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginLeft="@dimen/dp_12">
+
+                <TextView
+                    android:id="@+id/live_room_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:ellipsize="marquee"
+                    android:gravity="bottom"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/background_blue_color"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <TextView
+                    android:id="@+id/live_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_below="@id/live_room_name"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:ellipsize="marquee"
+                    android:gravity="top"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:singleLine="true"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/background_blue_color"
+                    android:textSize="@dimen/text_size_small" /><!-- 滚动属性似乎要写在最后配合setSelected才生效 -->
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/show_info"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:onClick="onShowInfo"
+                android:padding="@dimen/dp_4"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_info_bg"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/live_btn_switch_camera"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:layout_toStartOf="@id/show_info"
+                android:onClick="onSwitchCameraClicked"
+                android:padding="@dimen/dp_6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_switch_camera" />
+        </RelativeLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.huawei.rtcdemo.ui.WndArrangeMaker
+        android:id="@+id/live_video_grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/bottom_total_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/live_btn_role_change"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:onClick="onChangeRole"
+            android:scaleType="centerCrop"
+            android:src="@drawable/btn_role_change"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/bottom_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginEnd="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_40"
+            android:background="@drawable/live_room_bottom_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/live_btn_mute_video"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:onClick="onMuteVideoClicked"
+                android:padding="@dimen/dp_6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_mute_video"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/live_btn_mute_audio"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:onClick="onMuteAudioClicked"
+                android:padding="@dimen/dp_6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_mute_audio"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/live_btn_hangup"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:onClick="onHangupClicked"
+                android:padding="@dimen/dp_2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_handup_red" />
+
+            <ImageView
+                android:id="@+id/live_btn_audio_route"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:onClick="onAudioRouteClicked"
+                android:padding="@dimen/dp_2"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_audio_route" />
+
+            <ImageView
+                android:id="@+id/live_btn_room_list"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_8"
+                android:onClick="getRoomMemberPopup"
+                android:padding="@dimen/dp_6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/btn_interact_members"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/quality_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/dp_128"
+        android:layout_marginBottom="@dimen/dp_128"
+        android:background="@color/white_half_alpha"
+        android:fitsSystemWindows="true"
+        android:visibility="invisible">
+
+        <com.huawei.rtcdemo.ui.TableView
+            android:id="@+id/audio_quality_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerColor="@color/dark_black"
+            app:dividerWidth="@dimen/dp_1"
+            app:headerColor="@color/white_half_transparent"
+            app:headerTextColor="@color/black"
+            app:headerTextSize="@dimen/text_size_little"
+            app:rowHeight="@dimen/dp_24"
+            app:textColor="@color/dark_black"
+            app:textSize="@dimen/text_size_little"
+            app:unitColumnWidth="0dp" />
+
+        <com.huawei.rtcdemo.ui.TableView
+            android:id="@+id/video_quality_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/audio_quality_table"
+            android:layout_marginTop="@dimen/dp_16"
+            app:dividerColor="@color/dark_black"
+            app:dividerWidth="@dimen/dp_1"
+            app:headerColor="@color/white_half_transparent"
+            app:headerTextColor="@color/black"
+            app:headerTextSize="@dimen/text_size_little"
+            app:rowHeight="@dimen/dp_24"
+            app:textColor="@color/dark_black"
+            app:textSize="@dimen/text_size_little"
+            app:unitColumnWidth="0dp" />
+
+        <com.huawei.rtcdemo.ui.TableView
+            android:id="@+id/aux_video_quality_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video_quality_table"
+            android:layout_marginTop="@dimen/dp_16"
+            app:dividerColor="@color/dark_black"
+            app:dividerWidth="@dimen/dp_1"
+            app:headerColor="@color/white_half_transparent"
+            app:headerTextColor="@color/black"
+            app:headerTextSize="@dimen/text_size_little"
+            app:rowHeight="@dimen/dp_24"
+            app:textColor="@color/dark_black"
+            app:textSize="@dimen/text_size_little"
+            app:unitColumnWidth="0dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+.modal-header {
+    line-height: 30px;
+    padding: 10px 20px 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+.footer {
+  border-top: none;
+  text-align: center;
+}
+
+.btn-group > d-button {
+  margin-right: 5px;
+}
+
+.devui-form-horizontal .devui-form-item {
+  margin-bottom: 14px !important;
+}
+
+.version{
+  text-align: center;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}

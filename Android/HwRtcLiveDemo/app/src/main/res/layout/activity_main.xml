@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    tools:ignore="ResourceName">
+
+    <com.huawei.rtcdemo.ui.NewTitleBar
+        android:id="@+id/live_room_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:center_color="@color/background_blue_color"
+        app:center_text="@string/rtc_room_list"
+        app:layout_constraintTop_toTopOf="parent"
+        app:right_icon="@drawable/btn_setting_bg"
+        app:display_as_home="true"
+        app:title_bg_color="@color/main_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_live_room"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/main_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/live_room_title"
+        android:paddingStart="@dimen/dp_14"
+        android:paddingEnd="@dimen/dp_14" />
+
+    <Button
+        android:id="@+id/btn_create_live_room"
+        android:layout_width="@dimen/dp_240"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:background="@drawable/btn_create_rtc_room_bg"
+        android:text="@string/create_class_room"
+        android:textColor="@color/main_background"
+        android:textSize="@dimen/text_size_normal"
+            android:onClick="onCreateLiveRoomClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

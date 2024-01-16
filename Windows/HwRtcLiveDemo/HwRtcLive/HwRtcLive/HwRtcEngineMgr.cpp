@@ -93,7 +93,6 @@ BOOL CRtcEngineMgr::JoinRoom(const char* userId, const char* userName, const cha
     joinRoomParam.userName = userName;
     joinRoomParam.autoSubscribeAudio = true;
     joinRoomParam.autoSubscribeVideo = true;
-    joinRoomParam.authorization = "";
     joinRoomParam.ctime = m_ctime;
     joinRoomParam.roomId = roomId;
     joinRoomParam.userRole = m_roleType;
